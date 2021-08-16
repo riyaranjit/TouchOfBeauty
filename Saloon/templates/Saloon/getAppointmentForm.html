@@ -1,0 +1,78 @@
+{% extends 'base-admin.html' %}
+{% block title %}
+<title>All Contact</title>
+
+{% endblock %}
+{% block main %}
+<style>
+    body{
+        background: rgb(91, 134, 61) !important;
+    }
+
+    .success_message{
+    background:#4DB6AC;
+    color:#fff;
+    border-radius:5px;
+}
+
+    .error_message{
+    background:green;
+    color:#fff;
+    border-radius:5px;
+    }
+</style>
+
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="col-md-12">
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+                {% endif %}
+
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <br><br>
+            <h1 class="text-center">All Appointments</h1>
+            <div class="card py-2 px-2">
+                <div class="card card-body">
+                    <form class="form" method="GET" style="margin-left:590px;">
+                      <label for="id_Name" style="display: none;">Name:</label>
+                      <input type="text" name="Name" id="id_Name" style="height: 35px;">
+                      <button type="submit" class="btn btn-primary btn-md">Search</button>
+                    </form>
+                  </div>
+                <a class="btn btn-success btn-sm" style="height:40px;" href="/addAppointmentForm">Add New Appointment</a>
+                <table class="table-striped">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Select Service</th>
+                        <th>PhoneNo</th>
+                        <th>Appointment Date</th>
+                        <th>Description</th>
+                    </tr>
+                    {% for appointment in appointments %}
+                    <tr>
+                        <td> {{ appointment.Name }}</td>
+                        <td> {{ appointment.Email }}</td>
+                        <td> {{ appointment.Service }}</td>
+                        <td> {{ appointment.Phone }}</td>
+                        <td> {{ appointment.AppointDate }}</td>
+                        <td> {{ appointment.Desc }}</td>
+                        <td><a href="/updateAppointmentForm/{{appointment.id}}" class="btn btn-primary btn-sm">Edit</a> &nbsp;
+                            <a href="/deleteAppointmentForm/{{appointment.id}}" class="btn btn-danger btn-sm"  onclick="return confirm('Are you sure want to delete this person?')">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

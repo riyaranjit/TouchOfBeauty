@@ -1,0 +1,311 @@
+.navbar{
+    height:fit-content ;
+    top: -19rem;
+}
+.nav-link{
+    font-size:18px;
+    color: white !important;
+    font-weight:bold;
+    
+ }
+
+ .nav-link:active{
+    color:green !important;
+    }
+.nav-link:hover{
+    color:#ff81fe !important;
+    }
+
+@media screen and (min-width:576px){
+    .nav-link #sign{
+        margin-left: 40px;
+    }
+} 
+   
+ /* banner section */
+
+.hero{
+     background: url(../images/leaf.jpg);
+     background-size: cover;
+     background-repeat: no-repeat; 
+     margin-top: 92px;
+     min-height: 800px;
+     position: relative;
+     overflow: hidden;
+     
+}
+
+@media screen and (max-width: 768px){
+    .hero{
+    background: url(../images/leaf.jpg);
+     background-size: cover;
+     background-repeat: no-repeat; 
+     margin-top: 92px;
+     /* min-height: 400px; */
+     position: relative;
+    }
+    .ftitle {
+        padding-left: 35rem;
+        padding-top: 10%;
+        font-weight: 12;
+        font-family: "Rufina",serif;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: crimson;
+        text-shadow: #555;
+        position: absolute;
+        left:-300px;
+        top: 35%;
+        font-size: 30px;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .stitle{
+        font-weight: bold;
+        color: crimson;
+        letter-spacing: 5px;
+        line-height: 70px;
+        text-shadow: teal;
+        text-transform: uppercase;
+        top : 100%;
+        padding-top: 10%;
+        left: -270px;
+        font-size: 16px;
+
+    }
+}
+.ftitle {
+    padding-left: 35rem;
+    font-weight: 100;
+    font-family: "Rufina",serif;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: crimson;
+    text-shadow: #555;
+    position: absolute;
+    top: 35%;
+    -webkit-text-size-adjust: 100%;
+}
+.stitle{
+    width:auto;
+    font-weight: bold;
+    color: crimson;
+    letter-spacing: 4px;
+    padding-left: 30rem;
+    line-height: 70px;
+    text-shadow: teal;
+    text-transform: uppercase;
+    /* margin-top:10px; */
+    position: absolute;
+    top : 40%;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media screen and (max-width:365px){
+    .ftitle{
+        padding-left: 25rem;
+        font-size: 30px;
+        text-align: left;
+        font-weight: 60;
+        font-family: "Rufina",serif;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: crimson;
+        text-shadow: #555;
+        position: absolute;
+        top: 15%;
+        -webkit-text-size-adjust: 100%;
+    }
+    .stitle{
+        width:auto;
+        font-size: 25px;
+        font-weight: bold;
+        color: crimson;
+        letter-spacing: 2px;
+        padding-left: 20rem;
+        line-height: 50px;
+        text-shadow: teal;
+        text-transform: uppercase;
+        padding-top:10px;
+        position: absolute;
+        top : 30%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    .text-centerr{
+        margin-top: -200px;
+        text-align: center;
+        text-decoration: solid;
+        margin-left: -140px;
+    }
+}
+@media screen and (max-width:982px){
+.cardd{
+        display: block;
+        margin: auto;
+      }
+}
+.cardd{
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.175,0.885,0.32,1.275);
+}
+.cardd:hover{
+    transform: scale(1.5);
+}
+.cardd-img-top{
+    height:150px;
+    object-fit: cover;
+}
+.responsive{
+    height: auto;
+    width: 100%;
+    top:-20%;
+} 
+/* banner section end */
+
+/*About Section*/
+.about{
+    margin-top: 2% !important;
+    text-align: left;
+    background-color: hsla(180, 22%, 90%, 0.5);
+    height: 400px;
+}
+.sec-heading{
+    margin-top: 10%;
+    margin-bottom: 30px;
+    position: relative;
+}
+.sec-heading .tagline{
+    color: crimson;
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 2;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    font-family: 'sans-serif';
+}
+.sec-heading p{
+    color:black;
+    font-family:'Times New Roman', Times, serif;
+    font-weight:400px;
+    line-break: loose;
+    font-size: 18px;
+    
+    margin-bottom: 0;
+}
+.btn-style{
+    color:wheat;
+    border:2px solid skyblue;
+    border-radius: 20px !important;
+    background-color: rgb(57, 154, 199) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 36px !important;
+    padding: 5px 20px !important;
+    transition: 0.3s !important;
+
+}
+.btn-style:hover{
+    background-color: crimson !important;
+}
+.img-fluid{
+    margin-top: 4%;
+}
+.btn-round{
+    background-color: #ff817e;
+    border-radius: 50px;
+    margin: 5px;
+    color: white;
+}
+@media screen and (max-width:676px){
+    .offset-col-lg-4{
+        display: relative;
+    }
+}
+/*End of about Section*/
+
+
+/* make appointment */
+@media screen and (max-width:360px){
+.container{
+    margin-top: 80px !important;
+    /* padding-top: 169px;
+    max-width: 558px; */
+    
+}
+.text-center{
+    color: #3a414e;
+}
+}
+/* end of appointment */
+
+/* footer */
+.footer{
+    background-color: #fff9f8;
+    padding: 80px 0 60px;
+
+}
+.footer .foo-logo{
+    margin: 0 auto ;
+  
+}
+.footer .nav-home{
+    position: relative;
+    margin:30px 0;
+
+}
+.footer .nav-home li a{
+    color: #263a41;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0 20px;
+}
+.footer .nav-home li a:hover{
+    color: #ff817e
+}
+.footer .foo-social{
+    margin-bottom: 30px;
+}
+.footer .foo-social a{
+    border-right: 1px solid #b1b4bb ;
+    color:#3a414e;
+    display: inline-block;
+    font-size: 14px;
+    line-height: .5;
+    padding: 0 10px;
+
+}
+.footer .foo-social a:hover{
+    color: #ff817e;
+}
+.footer .copyright{
+    color: #888;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+}
+.footer .copyright a{
+    color: #ff817e;
+}
+@media screen and (min-width: 768px){
+    .footer .nav-home li{
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width:767px){
+    .footer .nav-home ul{
+        background-color: #fcf5ee;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+.footer .nav-home li a{
+    padding: 10px 15px;
+
+}
+/* footer ends */

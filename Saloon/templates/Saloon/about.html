@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock title %}
+
+{% block main %}
+
+<style>
+
+  #head{
+    text-align: center;
+    font-size: 100;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(78, 68, 71);
+    margin: 20px;
+  }
+  .card-img-top{
+    width: 80 !important; 
+    height:150 !important;
+ }
+  .card-space{
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom:30px;
+  }
+  .social{
+    position: absolute;
+    left:-50px;
+    top:0;
+    bottom: 0;
+    width:50px;
+    transition: left ease-in-out 0.3s;
+    background: rgba(0, 0, 0, 0.349);
+    text-align: center;
+  }
+  .social a{
+    transition: color 0.3s;
+    display: block;
+    color:#fff;
+    margin-top: 15px;
+  
+  }
+  .social a:hover{
+    color: yellow;
+  }
+  .social i{
+    font-size: 18px;
+    margin: 0 2px;
+  }
+</style>
+
+  <!-- About us-->
+  <br><br><br>
+  <section class="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 font-left ">
+          <div class="sec-heading">
+            <span class="tagline">ABOUT US</span>
+            <blockquote class="blockquote text-left">
+            <p class="mb-0">We have been providing service since 2004 with
+               great enthusiasm and success. Now we spreaded in 7 districts 
+               of Nepal and with your support we want to flourish 
+               future.</p>
+            </blockquote>
+           
+          </div>
+        </div>
+        <div class=" offset-col-lg-4 col-lg-6"> 
+          <img src="static/images/saloon.jpg" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>            
+  </section>
+
+  <div class="container">
+    <h1 id="head">Meet our team</h1>
+  <div class="row">
+    {% for team in teams %}
+     <div class="col-md-3 card-space">
+       <div class="card" style="width:14rem;">
+         <img class="card-img-top " src="/{{ team.image }}" alt="service">
+         <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+         <div class="card-body">
+           <h5 class="card-title">{{ team.name }}</h5>
+           <p class="card-text">{{ team.expert }}</p>
+           <h3 class="card=title">{{ team.experience }}</h3>  
+         </div>  
+       </div>
+     </div>
+     {% endfor %}
+   </div> 
+  </div>
+
+  {% endblock %}

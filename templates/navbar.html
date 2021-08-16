@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary fixed-top" id="mainNav" >
+    <div class="container-fluid">
+        <img src="/static/images/logo.jpg" alt="logo" width="120" height="80">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link active" style="margin-left:2rem" aria-current="page" href="/home">Home<span class="sr-only">Home(current)</span></a>
+        </li>
+        <li class="nav-item {{activate_aboutMF}}">
+            <a class="nav-link pl-lg-5" href="/about" >About</a>
+        </li>
+        <li class="nav-item {{activate_galleryMF}}">
+            <a class="nav-link pl-lg-5" href="/gallery">Gallery</a>
+        </li>
+        
+        <li class="nav-item {{activate_serviceMF}}">
+            <a class="nav-link pl-lg-5" href="/services" >Services</a>
+        </li>
+      
+        <li class="nav-item {{activate_contactMF}}">
+            <a class="nav-link pl-lg-5" href="/contact" >Contact</a>
+        </li>
+        <!---------------  signup and login ------------------->
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="/accounts/logout">Logout</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link mx-2 d-flex mr-auto" href="/accounts/profile">Profile</a>
+        </li>
+        {% else %}
+        <li class="nav-item" >
+            <a class="nav-link" id="sign" href="/accounts/register"  style="margin-left:20rem">Signup</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/accounts/login" style="padding-left: 10px;">Login</a>
+        </li>
+        
+
+        {% endif %}
+        </ul>
+    </div>
+    </div>
+</nav>

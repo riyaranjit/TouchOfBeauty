@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}
+
+{% endblock title %}
+
+{% block main %}
+
+<style>
+.card-space{
+  margin-left: 100px;
+  margin-top: 20px;
+  width:20rem;
+  margin-bottom:30px;
+}
+
+.card-img-top{
+  height: 180px;
+  padding: 6px;
+}
+
+
+</style>
+
+<div class="container" style="background-color:antiquewhite">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="col-md-12">
+        {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+        <h6 class="success_message py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+        <h6 class="error_message py-3 px-1 my-2 text-center">{{message}}</h6>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <br><br><br><br><br>
+      <h1 class="text-center">All Services</h1>
+      <div class="card py-2 px-2">
+        <div class="card card-body">
+          <form class="form" method="GET" style="margin-left:590px;">
+            <label for="id_Name" style="display: none;">Name:</label>
+            <input type="text" name="game" id="id_Name" style="height: 35px; background-color:wheat;">
+            <button type="submit" class="btn btn-primary btn-md">Search</button>
+          </form>
+        </div>
+
+      
+      <div class="row">
+       {% for service in services %}
+        <div class="col-md-4 card-space">
+          <div class="card" style="width:14rem;">
+            <img class="card-img-top" src="/{{ service.image }}"  alt="service">
+            <div class="card-body">
+              <h5 class="card-title">{{ service.name }}</h5>
+              <p class="card-text">{{ service.price }}</p>
+              <a href="/addAppointmentForm" class="btn btn-primary">Book Service</a>  
+            </div>  
+          </div>
+        </div>
+        {% endfor %}
+      </div> 
+    </div>
+  </div>
+</div>
+{% endblock %}
